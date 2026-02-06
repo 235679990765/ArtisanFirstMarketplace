@@ -1,20 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Users, Percent, Globe, Truck, Home, TrendingDown, Heart, BookOpen } from "lucide-react";
+import { Users, Percent, Globe, Truck, Home } from "lucide-react";
 
 const challenges = [
-  { icon: Users, text: "Dependence on middlemen" },
-  { icon: Percent, text: "High commissions on platforms" },
-  { icon: Globe, text: "Language barriers" },
-  { icon: Truck, text: "High logistics costs" },
-  { icon: Home, text: "Limited access for women artisans" },
-];
-
-const consequences = [
-  { icon: TrendingDown, text: "Artisans earn less", color: "text-secondary" },
-  { icon: Heart, text: "Crafts lose value", color: "text-secondary" },
-  { icon: BookOpen, text: "Traditional knowledge disappears", color: "text-secondary" },
+  { icon: Users, text: "Dependence on middlemen", detail: "Artisans lose up to 60% of product value" },
+  { icon: Percent, text: "High platform commissions", detail: "Major marketplaces charge 20-40% fees" },
+  { icon: Globe, text: "Language barriers", detail: "Most platforms only support English" },
+  { icon: Truck, text: "Complex logistics", detail: "Expensive shipping from remote areas" },
+  { icon: Home, text: "Limited access for women", detail: "Home-based artisans lack digital presence" },
 ];
 
 const Problem = () => {
@@ -22,70 +16,56 @@ const Problem = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="section-padding bg-muted/30">
-      <div className="container mx-auto">
-        <div className="max-w-4xl mx-auto">
+    <section ref={ref} className="section-padding relative overflow-hidden">
+      {/* Decorative background */}
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-secondary/5 rounded-full blur-3xl -translate-y-1/2" />
+
+      <div className="container mx-auto relative z-10">
+        <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="mb-16"
           >
-            <span className="text-secondary font-medium text-sm tracking-wider uppercase mb-4 block">
-              The Challenge
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
-              The Problem We Are Solving
+            <div className="flex items-center gap-4 mb-6">
+              <span className="w-12 h-px bg-secondary" />
+              <span className="text-secondary font-medium text-sm tracking-[0.3em] uppercase">The Challenge</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6 max-w-2xl">
+              Why India's Artisans Struggle to Reach Markets
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Despite their exceptional skills, most tribal artisans struggle to sell beyond local markets.
+            <p className="text-lg text-muted-foreground max-w-xl">
+              Despite their exceptional skills, most tribal artisans face systemic barriers that keep them trapped in poverty.
             </p>
           </motion.div>
 
-          {/* Challenges grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-12"
-          >
-            <h3 className="text-xl font-semibold text-foreground mb-6 text-center">They face:</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {challenges.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-card shadow-soft"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-foreground font-medium">{item.text}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Consequences */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-card rounded-2xl p-8 shadow-card"
-          >
-            <h3 className="text-xl font-semibold text-foreground mb-6 text-center">As a result:</h3>
-            <div className="flex flex-col md:flex-row gap-6 justify-center">
-              {consequences.map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <item.icon className={`w-5 h-5 ${item.color}`} />
-                  <span className="text-muted-foreground">{item.text}</span>
+          {/* Challenges - staggered layout */}
+          <div className="space-y-4">
+            {challenges.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -30 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                className="group flex items-center gap-5 p-5 rounded-xl bg-card shadow-soft border border-border/50 hover:shadow-card hover:border-secondary/30 transition-all duration-300"
+                style={{ marginLeft: `${index * 2}%` }}
+              >
+                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 transition-colors">
+                  <item.icon className="w-6 h-6 text-secondary" />
                 </div>
-              ))}
-            </div>
-          </motion.div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-foreground mb-0.5">{item.text}</h3>
+                  <p className="text-sm text-muted-foreground">{item.detail}</p>
+                </div>
+                <div className="hidden md:block w-8 h-8 rounded-full bg-muted flex items-center justify-center text-sm font-medium text-muted-foreground">
+                  {index + 1}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
