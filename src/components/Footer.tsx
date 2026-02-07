@@ -129,7 +129,7 @@ export default function Footer() {
             <MapPin className="h-5 w-5 text-amber-300" />
             <div>
               <p className="text-sm text-emerald-300">Headquarters</p>
-              <p>Delhi, India • Working Pan-India</p>
+              <p>Ahmedabad, India • Working Pan-India</p>
             </div>
           </div>
         </div>

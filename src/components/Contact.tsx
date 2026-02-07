@@ -70,7 +70,7 @@ export default function Contact() {
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
-      details: "Delhi, India",
+      details: "Ahmedabad, India",
       description: "Working Pan-India"
     }
   ]
@@ -246,6 +246,26 @@ export default function Contact() {
                   We typically respond within 24 hours
                 </p>
               </form>
+
+            {/* Founder Information */}
+            <Card className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white top-8 mt-12">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Founder's Note
+                </h3>
+                <div className="space-y-3">
+                  <p className="text-emerald-100">
+                    "This platform is born from a simple belief: every artisan deserves 
+                    fair compensation for their skill and heritage. We're not just building 
+                    a marketplace; we're creating a movement for economic dignity."
+                  </p>
+                  <div className="pt-3 border-t border-emerald-500">
+                    <p className="font-semibold">Rot Anil</p>
+                    <p className="text-sm text-emerald-200">Founder, ArtisanMarket</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
             </CardContent>
           </Card>
 
@@ -312,26 +332,6 @@ export default function Contact() {
                   <p className="text-sm text-gray-500">
                     Currently inviting partners for our pilot phase across India
                   </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Founder Information */}
-            <Card className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Founder's Note
-                </h3>
-                <div className="space-y-3">
-                  <p className="text-emerald-100">
-                    "This platform is born from a simple belief: every artisan deserves 
-                    fair compensation for their skill and heritage. We're not just building 
-                    a marketplace; we're creating a movement for economic dignity."
-                  </p>
-                  <div className="pt-3 border-t border-emerald-500">
-                    <p className="font-semibold">[Your Name]</p>
-                    <p className="text-sm text-emerald-200">Founder, ArtisanMarket</p>
-                  </div>
                 </div>
               </CardContent>
             </Card>

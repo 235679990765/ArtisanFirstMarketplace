@@ -35,41 +35,21 @@ export default function Index() {
       <Solution />
       <SectionDivider />
       
-      {/* <HowItWorks /> */}
-      <SectionDivider />
-      
-      {/* <CraftCategories /> */}
-      <SectionDivider />
-      
-      {/* <ValueProposition /> */}
-      <SectionDivider />
-      
       <Vision />
       <SectionDivider />
       
       <ForWhom />
       <SectionDivider />
       
-      {/* <ArtisanStories /> */}
-      <SectionDivider />
-      
-      {/* <Testimonials /> */}
-      <SectionDivider />
-      
       <CurrentStage />
       <SectionDivider />
-      
-      {/* <PilotRegions /> */}
-      <SectionDivider />
+    
       
       <Alignment />
       <SectionDivider />
       
-      <Festival />
-      <SectionDivider />
-      
-      {/* <ImpactQuote /> */}
-      <SectionDivider />
+      {/* <Festival />
+      <SectionDivider /> */}
       
       <WhyMatters />
       <SectionDivider />

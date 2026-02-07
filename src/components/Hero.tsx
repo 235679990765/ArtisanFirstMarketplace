@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background with gradient overlay */}
       <div className="absolute px-(-4) py-(-8) inset-0 bg-gradient-to-r from-emerald-900/90 to-teal-800/90">
         <div 
-          className="absolute inset-0 bg-[url('/src/assets/hero-artisan.jpg')] bg-cover bg-center opacity-20 "
+          className="absolute inset-0 bg-cover bg-center opacity-15 "
           style={{ backgroundImage: `url('/src/assets/hero-artisan.jpg')` }}
         />
         
@@ -39,7 +39,7 @@ export default function Hero() {
           
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed animate-slide-up delay-100">
-            Empowering artisans to showcase, sell, and sustain their craft — 
+            Empowering artisans to showcase, sell, and sustain their craft
             without middlemen, language barriers, or digital complexity.
           </p>
           

@@ -177,11 +177,6 @@ export default function Solution() {
                   </div>
                   
                   <h4 className="font-semibold text-gray-900 mb-2">{item.title}</h4>
-                  
-                  {/* Connector Line */}
-                  {index < 4 && (
-                    <div className="hidden md:block absolute top-8 left-1/4 w-1/2 h-1 bg-emerald-200 transform translate-x-12"></div>
-                  )}
                 </div>
               ))}
             </div>
