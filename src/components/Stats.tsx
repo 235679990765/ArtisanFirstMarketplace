@@ -108,7 +108,9 @@ export default function Stats() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center p-6 bg-white/10 rounded-xl">
-              <DollarSign className="h-12 w-12 mx-auto mb-4 text-emerald-200" />
+              <span className="h-12 w-12 mx-auto mb-4 flex items-center justify-center text-emerald-200 text-6xl">
+                ₹
+              </span>
               <div className="text-3xl font-bold mb-2">₹15,000 Cr+</div>
               <p className="text-emerald-100">Annual Market Size</p>
               <p className="text-sm text-emerald-200 mt-2">Handicrafts & Handloom</p>
