@@ -1,40 +1,80 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Showcase from "@/components/Showcase";
-import Stats from "@/components/Stats";
-import Problem from "@/components/Problem";
-import Solution from "@/components/Solution";
-import ImpactQuote from "@/components/ImpactQuote";
-import ForWhom from "@/components/ForWhom";
-import CurrentStage from "@/components/CurrentStage";
-import Alignment from "@/components/Alignment";
-import Festival from "@/components/Festival";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import SectionDivider from "@/components/SectionDivider";
+import Hero from '../components/Hero'
+import Problem from '../components/Problem'
+import Solution from '../components/Solution'
+import Vision from '../components/Vision'
+import ForWhom from '../components/ForWhom'
+import CurrentStage from '../components/CurrentStage'
+import Alignment from '../components/Alignment'
+import Festival from '../components/Festival'
+import WhyMatters from '../components/WhyMatters'
+import Contact from '../components/Contact'
+import Stats from '../components/Stats'
+import Showcase from '../components/Showcase'
+// import ImpactQuote from '../components/ImpactQuote'
+import SectionDivider from '../components/SectionDivider'
+// import ArtisanStories from '../components/features/ArtisanStories'
+// import CraftCategories from '../components/features/CraftCategories'
+// import HowItWorks from '../components/features/HowItWorks'
+// import ValueProposition from '../components/features/ValueProposition'
+// import Testimonials from '../components/features/Testimonials'
+// import PilotRegions from '../components/features/PilotRegions'
 
-const Index = () => {
+export default function Index() {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <Hero />
-        <Showcase />
-        <Stats />
-        <SectionDivider variant="tribal" />
-        <Problem />
-        <Solution />
-        <ImpactQuote />
-        <ForWhom />
-        <SectionDivider variant="tribal" />
-        <CurrentStage />
-        <Alignment />
-        <Festival />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="space-y-16 md:space-y-24">
+      <Hero />
+      <SectionDivider />
+      
+      <Stats />
+      <Showcase />
+      <SectionDivider />
+      
+      <Problem />
+      <SectionDivider />
+      
+      <Solution />
+      <SectionDivider />
+      
+      {/* <HowItWorks /> */}
+      <SectionDivider />
+      
+      {/* <CraftCategories /> */}
+      <SectionDivider />
+      
+      {/* <ValueProposition /> */}
+      <SectionDivider />
+      
+      <Vision />
+      <SectionDivider />
+      
+      <ForWhom />
+      <SectionDivider />
+      
+      {/* <ArtisanStories /> */}
+      <SectionDivider />
+      
+      {/* <Testimonials /> */}
+      <SectionDivider />
+      
+      <CurrentStage />
+      <SectionDivider />
+      
+      {/* <PilotRegions /> */}
+      <SectionDivider />
+      
+      <Alignment />
+      <SectionDivider />
+      
+      <Festival />
+      <SectionDivider />
+      
+      {/* <ImpactQuote /> */}
+      <SectionDivider />
+      
+      <WhyMatters />
+      <SectionDivider />
+      
+      <Contact />
     </div>
-  );
-};
-
-export default Index;
+  )
+}

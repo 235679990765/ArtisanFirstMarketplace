@@ -1,64 +1,193 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { TrendingUp, Users, ShoppingBag, Globe } from "lucide-react";
+import { Card, CardContent } from './ui/card'
+import { 
+  Users, 
+  TrendingUp, 
+  Globe, 
+  Package,
+  Shield,
+  Heart,
+  DollarSign,
+  MapPin
+} from 'lucide-react'
 
 const stats = [
-  { icon: Users, value: "5000+", label: "Artisan Families", suffix: "" },
-  { icon: ShoppingBag, value: "100", label: "Craft Categories", suffix: "+" },
-  { icon: Globe, value: "15", label: "Indian States", suffix: "" },
-  { icon: TrendingUp, value: "80", label: "Revenue to Artisans", suffix: "%" },
-];
+  {
+    icon: <Users className="h-8 w-8" />,
+    value: "40M+",
+    label: "Artisans in India",
+    description: "Handloom, handicraft, and craft workers",
+    color: "text-emerald-600"
+  },
+  {
+    icon: <TrendingUp className="h-8 w-8" />,
+    value: "70%",
+    label: "Higher Potential Income",
+    description: "With direct market access",
+    color: "text-amber-600"
+  },
+  {
+    icon: <Globe className="h-8 w-8" />,
+    value: "10+",
+    label: "Languages Supported",
+    description: "Regional language interfaces",
+    color: "text-blue-600"
+  },
+  {
+    icon: <Package className="h-8 w-8" />,
+    value: "60%",
+    label: "Lower Logistics Cost",
+    description: "Through collection centers",
+    color: "text-purple-600"
+  },
+  {
+    icon: <Shield className="h-8 w-8" />,
+    value: "0%",
+    label: "Middlemen Commission",
+    description: "Direct artisan payment",
+    color: "text-red-600"
+  },
+  {
+    icon: <Heart className="h-8 w-8" />,
+    value: "75%",
+    label: "Women Artisans",
+    description: "Home-based craft producers",
+    color: "text-pink-600"
+  }
+]
 
-const Stats = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
+export default function Stats() {
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-muted/50">
-      <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <span className="text-primary font-medium text-sm tracking-widest uppercase">Our Vision in Numbers</span>
-          </motion.div>
+    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            The Scale of Opportunity
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            India's artisan economy represents a massive opportunity for 
+            sustainable development and cultural preservation.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-                className="text-center p-6 rounded-2xl bg-card shadow-soft border border-border/50"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-6 h-6 text-primary" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {stats.map((stat, index) => (
+            <Card 
+              key={index}
+              className="border-gray-200 hover:border-emerald-200 hover:shadow-lg transition-all duration-300"
+            >
+              <CardContent className="p-6">
+                <div className="flex items-start space-x-4">
+                  <div className={`p-3 rounded-lg bg-gray-100`}>
+                    <div className={stat.color}>{stat.icon}</div>
+                  </div>
+                  
+                  <div>
+                    <div className="flex items-baseline mb-1">
+                      <div className={`text-3xl font-bold ${stat.color}`}>
+                        {stat.value}
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      {stat.label}
+                    </h3>
+                    <p className="text-sm text-gray-500">
+                      {stat.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-1">
-                  {stat.value}{stat.suffix}
-                </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Market Size Visualization */}
+        <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-12">
+          <h3 className="text-2xl font-bold text-center mb-8">
+            India's Artisan Market Potential
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center p-6 bg-white/10 rounded-xl">
+              <DollarSign className="h-12 w-12 mx-auto mb-4 text-emerald-200" />
+              <div className="text-3xl font-bold mb-2">₹15,000 Cr+</div>
+              <p className="text-emerald-100">Annual Market Size</p>
+              <p className="text-sm text-emerald-200 mt-2">Handicrafts & Handloom</p>
+            </div>
+            
+            <div className="text-center p-6 bg-white/10 rounded-xl">
+              <MapPin className="h-12 w-12 mx-auto mb-4 text-emerald-200" />
+              <div className="text-3xl font-bold mb-2">5000+</div>
+              <p className="text-emerald-100">Craft Clusters</p>
+              <p className="text-sm text-emerald-200 mt-2">Across India</p>
+            </div>
+            
+            <div className="text-center p-6 bg-white/10 rounded-xl">
+              <Globe className="h-12 w-12 mx-auto mb-4 text-emerald-200" />
+              <div className="text-3xl font-bold mb-2">200+</div>
+              <p className="text-emerald-100">Countries</p>
+              <p className="text-sm text-emerald-200 mt-2">Export Destination</p>
+            </div>
           </div>
+        </div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-center text-sm text-muted-foreground mt-8"
-          >
-            * Projected impact metrics for pilot phase
-          </motion.p>
+        {/* Current Reality */}
+        <div className="bg-white rounded-2xl shadow-xl p-8">
+          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            The Current vs Potential Reality
+          </h3>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-lg font-semibold text-red-600 mb-4">
+                Current Reality
+              </h4>
+              <div className="space-y-4">
+                {[
+                  "Artisans earn only 20-30% of product value",
+                  "Limited to local markets",
+                  "Dependent on middlemen",
+                  "No digital access or skills",
+                  "Youth abandoning traditional crafts"
+                ].map((point, index) => (
+                  <div key={index} className="flex items-center">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                    <span className="text-gray-600">{point}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold text-emerald-600 mb-4">
+                Potential with Our Platform
+              </h4>
+              <div className="space-y-4">
+                {[
+                  "Artisans earn 70-80% of product value",
+                  "Access to national & global markets",
+                  "Direct connection with buyers",
+                  "Digital empowerment with assistance",
+                  "Youth see crafts as viable career"
+                ].map((point, index) => (
+                  <div key={index} className="flex items-center">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                    <span className="text-gray-600">{point}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-8 border-t border-gray-200">
+            <div className="text-center">
+              <p className="text-gray-600 italic">
+                "The numbers tell a story of untapped potential and 
+                opportunity waiting to be realized."
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
-};
-
-export default Stats;
+  )
+}

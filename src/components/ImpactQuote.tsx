@@ -1,52 +1,47 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Quote } from "lucide-react";
-
-const ImpactQuote = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
+export default function ImpactQuote() {
   return (
-    <section ref={ref} className="py-20 md:py-32 bg-primary relative overflow-hidden">
-      {/* Decorative patterns */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="quote-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-              <circle cx="30" cy="30" r="1.5" fill="currentColor" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#quote-pattern)" className="text-white" />
-        </svg>
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <Quote className="w-12 h-12 text-primary-foreground/30 mx-auto mb-8" />
-          
-          <blockquote className="text-2xl md:text-3xl lg:text-4xl font-serif text-primary-foreground leading-relaxed mb-8">
-            "When artisans earn fairly, culture survives, communities grow, and pride returns to traditional work."
-          </blockquote>
-
-          <div className="flex items-center justify-center gap-4">
-            <span className="w-12 h-px bg-primary-foreground/30" />
-            <span className="text-primary-foreground/70 text-sm tracking-widest uppercase">Our Belief</span>
-            <span className="w-12 h-px bg-primary-foreground/30" />
+    <section className="py-16 bg-gradient-to-b from-emerald-900 to-teal-900">
+      <div className="container mx-auto px-4">
+        <div className="text-center">
+          <div className="inline-block p-1 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full mb-8">
+            <div className="bg-emerald-900 rounded-full p-1">
+              <div className="text-5xl">"</div>
+            </div>
           </div>
-        </motion.div>
+          
+          <blockquote className="max-w-4xl mx-auto">
+            <p className="text-2xl md:text-3xl lg:text-4xl text-white font-light leading-relaxed mb-8">
+              This platform is not just a marketplace — it is a livelihood bridge 
+              between tradition and opportunity, where every craft sold sustains 
+              a family and preserves a cultural legacy.
+            </p>
+            
+            <footer className="text-emerald-200">
+              <p className="text-lg font-medium">
+                — The ArtisanMarket Vision
+              </p>
+              <p className="text-sm mt-2">
+                Empowering artisans, preserving heritage, building communities
+              </p>
+            </footer>
+          </blockquote>
+          
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
+            <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
+              <span className="text-emerald-100 font-medium">Fair Trade</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
+              <span className="text-emerald-100 font-medium">Direct Selling</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
+              <span className="text-emerald-100 font-medium">Cultural Preservation</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
+              <span className="text-emerald-100 font-medium">Community Led</span>
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* Corner decorations */}
-      <div className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 border-primary-foreground/20 rounded-tl-lg" />
-      <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-primary-foreground/20 rounded-br-lg" />
     </section>
-  );
-};
-
-export default ImpactQuote;
+  )
+}
