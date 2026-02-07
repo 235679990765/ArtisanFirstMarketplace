@@ -61,22 +61,22 @@ const visionPillars = [
 
 const milestones = [
   {
-    year: "2024",
+    year: "2026",
     title: "Pilot Launch",
     achievements: ["500 artisans onboarded", "3 pilot regions", "MVP platform"]
   },
   {
-    year: "2025",
+    year: "2027",
     title: "Scale Phase 1",
     achievements: ["10,000 artisans", "10+ states", "Export partnerships"]
   },
   {
-    year: "2026",
+    year: "2028",
     title: "Scale Phase 2",
     achievements: ["100,000 artisans", "Pan-India presence", "Mobile app launch"]
   },
   {
-    year: "2028",
+    year: "2029",
     title: "Maturity",
     achievements: ["500,000+ artisans", "Global marketplace", "AI craft preservation"]
   }
